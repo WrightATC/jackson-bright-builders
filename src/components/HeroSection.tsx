@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="relative z-10 container py-24">
         <div className="max-w-2xl space-y-6">
           <p className="text-gold-glow font-semibold tracking-widest uppercase text-sm">
-            Jackson, Mississippi's Trusted Electricians
+            Jackson, Mississippi's Trusted Electrical Contractors
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-foreground leading-tight">
             Powering Jackson,{" "}
