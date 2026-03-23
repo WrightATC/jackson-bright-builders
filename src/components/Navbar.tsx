@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, Menu, X } from "lucide-react";
+import logo from "@/assets/ccm-logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -21,8 +22,11 @@ const Navbar = () => {
       {/* Main nav */}
       <nav className="bg-card/95 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="container flex justify-between items-center py-4">
-          <a href="#" className="font-serif text-2xl font-bold tracking-tight text-foreground">
-            CC <span className="text-gold-glow">Maintenance</span> Pros
+          <a href="#" className="flex items-center gap-3">
+            <img src={logo} alt="CCM Logo" className="h-10 w-10" />
+            <span className="font-serif text-2xl font-bold tracking-tight text-foreground">
+              Capital City <span className="text-gold-glow">Maintenance</span>
+            </span>
           </a>
 
           {/* Desktop */}

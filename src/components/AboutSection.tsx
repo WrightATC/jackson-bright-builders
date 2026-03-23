@@ -28,7 +28,7 @@ const AboutSection = () => {
             Rooted in Jackson
           </h2>
           <p className="mt-8 text-muted-foreground text-lg leading-relaxed">
-            CC Maintenance Pros was founded with one simple mission:{" "}
+            Capital City Maintenance was founded with one simple mission:{" "}
             <strong className="text-foreground">
               to strengthen the city of Jackson, one connection at a time.
             </strong>{" "}
