@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, Menu, X } from "lucide-react";
+import logo from "@/assets/ccm-logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);

@@ -9,7 +9,7 @@ const Footer = () => {
           Proudly serving Jackson, Mississippi and the surrounding communities.
         </p>
         <p className="text-xs text-primary-foreground/40">
-          © {new Date().getFullYear()} CC Maintenance Pros. All rights reserved.
+          © {new Date().getFullYear()} Capital City Maintenance. All rights reserved.
         </p>
       </div>
     </footer>
