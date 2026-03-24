@@ -11,11 +11,10 @@ import {
   Lamp,
   CircleDot,
   ArrowUpCircle,
-  ShieldCheck,
-  Phone,
 } from "lucide-react";
 
 const residential = [
+  { icon: Search, title: "Inspections", desc: "Thorough electrical safety inspections" },
   { icon: Zap, title: "Troubleshooting", desc: "Fast diagnosis and expert repairs" },
   { icon: Home, title: "Full Rewires", desc: "Complete home rewiring services" },
   { icon: Home, title: "New Construction", desc: "Electrical for new builds" },
@@ -38,10 +37,13 @@ const commercial = [
   { icon: ArrowUpCircle, title: "Lighting Upgrades", desc: "Energy-efficient LED retrofits" },
 ];
 
-const ServiceChip = ({ icon: Icon, title }: { icon: any; title: string }) => (
-  <div className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 text-sm font-medium text-foreground hover:border-secondary/50 transition-colors">
-    <Icon className="text-gold-glow shrink-0" size={16} />
-    {title}
+const ServiceCard = ({ icon: Icon, title, desc }: { icon: any; title: string; desc: string }) => (
+  <div className="bg-card rounded-lg p-6 shadow-sm border border-border hover:shadow-md hover:border-secondary/50 transition-all group">
+    <div className="w-12 h-12 rounded-md bg-secondary/15 flex items-center justify-center mb-4 group-hover:bg-secondary/25 transition-colors">
+      <Icon className="text-gold-glow" size={24} />
+    </div>
+    <h3 className="font-serif font-semibold text-lg text-foreground">{title}</h3>
+    <p className="text-muted-foreground text-sm mt-1">{desc}</p>
   </div>
 );
 
@@ -56,46 +58,22 @@ const ServicesSection = () => {
           </h2>
         </div>
 
-        {/* Inspections Highlight */}
-        <div className="mb-16 rounded-xl border-2 border-secondary/40 bg-gradient-to-br from-secondary/10 to-secondary/5 p-8 md:p-10">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
-              <ShieldCheck className="text-gold-glow" size={40} />
-            </div>
-            <div className="text-center md:text-left flex-1">
-              <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Whole Home Electrical Inspections
-              </h3>
-              <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
-                Protect your family and your investment. Our thorough whole-home inspections identify hidden hazards, code violations, and aging wiring — giving you peace of mind and a clear path to a safer home.
-              </p>
-            </div>
-            <a
-              href="tel:601-715-3541"
-              className="flex items-center gap-2 bg-secondary text-secondary-foreground px-6 py-3 rounded-md font-bold hover:opacity-90 transition-opacity shrink-0"
-            >
-              <Phone size={18} />
-              Schedule Now
-            </a>
-          </div>
-        </div>
-
         {/* Residential */}
-        <div className="mb-12">
-          <h3 className="font-serif text-2xl font-bold text-foreground mb-6 gold-underline">Residential</h3>
-          <div className="flex flex-wrap gap-3">
+        <div className="mb-16">
+          <h3 className="font-serif text-2xl font-bold text-foreground mb-8 gold-underline">Residential</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {residential.map((s) => (
-              <ServiceChip key={s.title} icon={s.icon} title={s.title} />
+              <ServiceCard key={s.title} {...s} />
             ))}
           </div>
         </div>
 
         {/* Commercial */}
         <div>
-          <h3 className="font-serif text-2xl font-bold text-foreground mb-6 gold-underline">Commercial</h3>
-          <div className="flex flex-wrap gap-3">
+          <h3 className="font-serif text-2xl font-bold text-foreground mb-8 gold-underline">Commercial</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {commercial.map((s) => (
-              <ServiceChip key={s.title} icon={s.icon} title={s.title} />
+              <ServiceCard key={s.title} {...s} />
             ))}
           </div>
         </div>

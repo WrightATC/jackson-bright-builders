@@ -10,7 +10,7 @@ const ContactSection = () => {
             Ready to Get Started?
           </h2>
           <p className="mt-8 text-primary-foreground/70 text-lg max-w-xl mx-auto">
-            Whether it's a quick repair or a major project, we'd love to hear from you. Reach out today — no pressure, just honest advice.
+            Whether it's a quick repair or a major project, we'd love to hear from you. Reach out for a free estimate — no pressure, just honest advice.
           </p>
         </div>
 
