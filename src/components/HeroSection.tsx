@@ -32,14 +32,8 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
             <a
-              href="#contact"
-              className="bg-secondary text-secondary-foreground px-8 py-3.5 rounded-md font-bold text-lg hover:opacity-90 transition-opacity text-center"
-            >
-              Free Estimate
-            </a>
-            <a
               href="tel:601-715-3541"
-              className="flex items-center justify-center gap-2 border-2 border-gold text-primary-foreground px-8 py-3.5 rounded-md font-semibold text-lg hover:bg-primary-foreground/10 transition-colors"
+              className="flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-8 py-3.5 rounded-md font-bold text-lg hover:opacity-90 transition-opacity"
             >
               <Phone size={20} />
               (601) 715-3541
