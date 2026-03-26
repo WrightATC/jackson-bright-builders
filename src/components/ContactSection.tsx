@@ -57,7 +57,7 @@ const ContactSection = () => {
             Ready to Get Started?
           </h2>
           <p className="mt-8 text-primary-foreground/70 text-lg max-w-xl mx-auto">
-            Whether it's a quick repair or a major project, we'd love to hear from you. Reach out today — no pressure, just honest advice.
+            Whether it's a quick repair or a major project, we'd love to hear from you.
           </p>
         </div>
 
@@ -72,11 +72,11 @@ const ContactSection = () => {
               </div>
             </a>
 
-            <a href="mailto:Ccmaintenancepros@gmail.com" className="flex items-center gap-4 p-6 rounded-lg border border-primary-foreground/15 hover:border-gold transition-colors">
+            <a href="mailto:ccmaintenancepros@gmail.com" className="flex items-center gap-4 p-6 rounded-lg border border-primary-foreground/15 hover:border-gold transition-colors">
               <Mail className="text-gold-glow shrink-0" size={28} />
               <div>
                 <p className="font-semibold text-lg">Email Us</p>
-                <p className="text-primary-foreground/60 text-sm">Ccmaintenancepros@gmail.com</p>
+                <p className="text-primary-foreground/60 text-sm">ccmaintenancepros@gmail.com</p>
               </div>
             </a>
 
@@ -145,7 +145,7 @@ const ContactSection = () => {
                 value={form.message}
                 onChange={handleChange}
                 className="w-full rounded-md border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:ring-2 focus:ring-secondary resize-none"
-                placeholder="Tell us about your project..."
+                placeholder="Tell us about your needs..."
               />
             </div>
             <button

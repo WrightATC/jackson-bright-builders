@@ -11,8 +11,8 @@ const Navbar = () => {
       {/* Top bar */}
       <div className="bg-navy-deep text-primary-foreground text-sm py-2">
         <div className="container flex justify-between items-center">
-          <a href="mailto:Ccmaintenancepros@gmail.com" className="flex items-center gap-2 hover:text-gold-glow transition-colors">
-            <Mail size={14} /> Ccmaintenancepros@gmail.com
+          <a href="mailto:ccmaintenancepros@gmail.com" className="flex items-center gap-2 hover:text-gold-glow transition-colors">
+            <Mail size={14} /> ccmaintenancepros@gmail.com
           </a>
           <a href="tel:601-715-3541" className="flex items-center gap-2 hover:text-gold-glow transition-colors">
             <Phone size={14} /> (601) 715-3541
