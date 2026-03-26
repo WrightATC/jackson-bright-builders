@@ -35,7 +35,7 @@ const HeroSection = () => {
               href="#contact"
               className="bg-secondary text-secondary-foreground px-8 py-3.5 rounded-md font-bold text-lg hover:opacity-90 transition-opacity text-center"
             >
-              Free Estimate
+              Contact Us
             </a>
             <a
               href="tel:601-715-3541"
