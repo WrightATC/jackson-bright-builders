@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/ccm-logo.png";
 
 const Navbar = () => {
