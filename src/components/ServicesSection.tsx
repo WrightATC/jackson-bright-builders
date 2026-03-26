@@ -19,13 +19,13 @@ const highlights = [
 ];
 
 const ServiceCard = ({ icon: Icon, title, desc, featured }: { icon: any; title: string; desc: string; featured?: boolean }) => (
-  <div className={`rounded-lg p-6 shadow-sm border transition-all group ${featured ? 'bg-secondary/10 border-secondary shadow-md ring-2 ring-secondary/30 sm:col-span-2' : 'bg-card border-border hover:shadow-md hover:border-secondary/50'}`}>
+  <div className={`rounded-lg p-6 shadow-sm border transition-all group h-full flex flex-col ${featured ? 'bg-secondary/10 border-secondary shadow-md ring-2 ring-secondary/30' : 'bg-card border-border hover:shadow-md hover:border-secondary/50'}`}>
     <div className={`w-12 h-12 rounded-md flex items-center justify-center mb-4 transition-colors ${featured ? 'bg-secondary/25' : 'bg-secondary/15 group-hover:bg-secondary/25'}`}>
       <Icon className="text-gold-glow" size={24} />
     </div>
     {featured && <span className="inline-block text-xs font-bold uppercase tracking-widest text-secondary mb-2">★ Featured Service</span>}
     <h3 className="font-serif font-semibold text-lg text-foreground">{title}</h3>
-    <p className="text-muted-foreground text-sm mt-1">{desc}</p>
+    <p className="text-muted-foreground text-sm mt-1 flex-grow">{desc}</p>
   </div>
 );
 
