@@ -40,9 +40,11 @@ const ServicesSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 justify-items-center max-w-5xl mx-auto">
           {highlights.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+            <div key={s.title} className="w-full">
+              <ServiceCard {...s} />
+            </div>
           ))}
         </div>
 
