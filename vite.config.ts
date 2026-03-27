@@ -4,8 +4,20 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+const normalizeBasePath = (input: string) => {
+  const trimmed = input.trim();
+
+  if (!trimmed) return "/";
+
+  const withLeadingSlash = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+  return withLeadingSlash.endsWith("/") ? withLeadingSlash : `${withLeadingSlash}/`;
+};
+
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/jackson-bright-builders/" : "/",
+  base:
+    mode === "production"
+      ? normalizeBasePath(process.env.VITE_BASE_PATH ?? "/")
+      : "/",
   server: {
     host: "::",
     port: 8080,
