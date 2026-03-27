@@ -13,20 +13,10 @@ const normalizeBasePath = (input: string) => {
   return withLeadingSlash.endsWith("/") ? withLeadingSlash : `${withLeadingSlash}/`;
 };
 
-const getGitHubPagesBasePath = () => {
-  const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
-
-  if (!repoName || repoName.endsWith(".github.io")) {
-    return "/";
-  }
-
-  return `/${repoName}/`;
-};
-
 export default defineConfig(({ mode }) => ({
   base:
     mode === "production"
-      ? normalizeBasePath(process.env.VITE_BASE_PATH ?? getGitHubPagesBasePath())
+      ? normalizeBasePath(process.env.VITE_BASE_PATH ?? "/")
       : "/",
   server: {
     host: "::",
