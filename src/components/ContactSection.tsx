@@ -1,53 +1,6 @@
-import { useState } from "react";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
-  const { toast } = useToast();
-  const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      toast({ title: "Please fill out all required fields.", variant: "destructive" });
-      return;
-    }
-
-    setLoading(true);
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_KEY",
-          subject: `New inquiry from ${form.name.trim()}`,
-          from_name: "Capital City Maintenance Website",
-          name: form.name.trim(),
-          email: form.email.trim(),
-          phone: form.phone.trim(),
-          message: form.message.trim(),
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        toast({ title: "Message sent!", description: "We'll get back to you soon." });
-        setForm({ name: "", email: "", phone: "", message: "" });
-      } else {
-        throw new Error("Submit failed");
-      }
-    } catch {
-      toast({ title: "Something went wrong. Please call us instead.", variant: "destructive" });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <section id="contact" className="py-20 bg-navy-deep text-primary-foreground">
       <div className="container">
@@ -89,74 +42,19 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-primary-foreground/80 mb-1">Name *</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                maxLength={100}
-                value={form.name}
-                onChange={handleChange}
-                className="w-full rounded-md border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:ring-2 focus:ring-secondary"
-                placeholder="Your name"
-              />
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-primary-foreground/80 mb-1">Email *</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  maxLength={255}
-                  value={form.email}
-                  onChange={handleChange}
-                  className="w-full rounded-md border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:ring-2 focus:ring-secondary"
-                  placeholder="you@email.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-primary-foreground/80 mb-1">Phone</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  maxLength={20}
-                  value={form.phone}
-                  onChange={handleChange}
-                  className="w-full rounded-md border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:ring-2 focus:ring-secondary"
-                  placeholder="(601) 555-1234"
-                />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-primary-foreground/80 mb-1">How can we help? *</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                maxLength={1000}
-                rows={4}
-                value={form.message}
-                onChange={handleChange}
-                className="w-full rounded-md border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:ring-2 focus:ring-secondary resize-none"
-                placeholder="Tell us about your needs..."
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-6 py-3.5 rounded-md font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+          {/* Embedded Google Form */}
+          <div className="rounded-lg overflow-hidden">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSc-zrDU6iLwCyHq8ULe9esmIbrItHGV-XaWaDxErPIjj2iI7g/viewform?embedded=true"
+              width="100%"
+              height="600"
+              className="border-0 bg-white rounded-lg"
+              title="Contact Form"
+              loading="lazy"
             >
-              <Send size={18} />
-              {loading ? "Sending..." : "Send Message"}
-            </button>
-          </form>
+              Loading…
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
