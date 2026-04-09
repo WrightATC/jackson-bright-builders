@@ -68,15 +68,15 @@ const ContactSection = () => {
               <Phone className="text-gold-glow shrink-0" size={28} />
               <div>
                 <p className="font-semibold text-lg">Call Us</p>
-                <p className="text-primary-foreground/60">(601) 715-3541</p>
+                <p className="text-primary-foreground/60">(769) 234-4512</p>
               </div>
             </a>
 
-            <a href="mailto:ccmaintenancepros@gmail.com" className="flex items-center gap-4 p-6 rounded-lg border border-primary-foreground/15 hover:border-gold transition-colors">
+            <a href="mailto:contact@ccmaintenancepros.com" className="flex items-center gap-4 p-6 rounded-lg border border-primary-foreground/15 hover:border-gold transition-colors">
               <Mail className="text-gold-glow shrink-0" size={28} />
               <div>
                 <p className="font-semibold text-lg">Email Us</p>
-                <p className="text-primary-foreground/60 text-sm">ccmaintenancepros@gmail.com</p>
+                <p className="text-primary-foreground/60 text-sm">contact@ccmaintenancepros.com</p>
               </div>
             </a>
 
