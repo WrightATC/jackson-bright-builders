@@ -45,7 +45,7 @@ const ContactSection = () => {
           {/* Embedded Google Form */}
           <div className="rounded-lg overflow-hidden">
             <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfLx251xH4ZtmpGHSm7/viewform?embedded=true"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSc-zrDU6iLwCyHq8ULe9esmIbrItHGV-XaWaDxErPIjj2iI7g/viewform?embedded=true"
               width="100%"
               height="600"
               className="border-0 bg-white rounded-lg"
