@@ -34,6 +34,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">Services</a>
             <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
+            {/* <Link to="/portfolio" className="text-muted-foreground hover:text-foreground transition-colors">Portfolio</Link> */}
             <a href="#contact" className="bg-secondary text-secondary-foreground px-5 py-2.5 rounded-md font-semibold hover:opacity-90 transition-opacity">
               Contact Us
             </a>
@@ -49,6 +50,7 @@ const Navbar = () => {
           <div className="md:hidden bg-card border-t border-border px-6 pb-4 space-y-3">
             <a href="#services" onClick={() => setOpen(false)} className="block py-2 text-muted-foreground">Services</a>
             <a href="#about" onClick={() => setOpen(false)} className="block py-2 text-muted-foreground">About</a>
+            {/* <Link to="/portfolio" onClick={() => setOpen(false)} className="block py-2 text-muted-foreground">Portfolio</Link> */}
             <a href="#contact" onClick={() => setOpen(false)} className="block py-2 bg-secondary text-secondary-foreground text-center rounded-md font-semibold">Contact Us</a>
           </div>
         )}
