@@ -21,7 +21,7 @@ const ContactSection = () => {
               <Phone className="text-gold-glow shrink-0" size={28} />
               <div>
                 <p className="font-semibold text-lg">Call Us</p>
-                <p className="text-primary-foreground/60">(769) 234-4512</p>
+                <p className="text-primary-foreground/60">(601) 715-3541</p>
               </div>
             </a>
 

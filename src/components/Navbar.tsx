@@ -15,7 +15,7 @@ const Navbar = () => {
             <Mail size={14} /> contact@ccmaintenancepros.com
           </a>
           <a href="tel:601-715-3541" className="flex items-center gap-2 hover:text-gold-glow transition-colors">
-            <Phone size={14} /> (769) 234-4512
+            <Phone size={14} /> (601) 715-3541
           </a>
         </div>
       </div>
