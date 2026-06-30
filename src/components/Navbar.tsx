@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Phone, Mail, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/ccm-logo.png";
+import logo from "@/assets/ccm-logo-wide.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -23,11 +23,12 @@ const Navbar = () => {
       {/* Main nav */}
       <nav className="bg-card/95 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="container flex justify-between items-center py-4">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="CCM Logo" className="h-10 w-10" />
-            <span className="font-serif text-2xl font-bold tracking-tight text-foreground">
-              Capital City <span className="text-gold-glow">Maintenance</span>
-            </span>
+          <Link to="/" className="flex items-center" aria-label="Capital City Maintenance — Home">
+            <img
+              src={logo}
+              alt="Capital City Maintenance"
+              className="h-12 md:h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop */}
